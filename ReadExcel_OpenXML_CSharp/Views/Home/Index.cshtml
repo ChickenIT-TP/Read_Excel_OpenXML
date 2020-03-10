@@ -1,0 +1,28 @@
+﻿@using System.Data;
+@{
+    ViewData["Title"] = "Home Page";
+
+     var dataExcel = ViewData["dataExcel"] as DataTable;
+}
+
+    <div class="text-center">
+        <table class="table">
+                @foreach (DataRow item in dataExcel.Rows)
+                {
+                    <tr>
+                        <td>
+                            @item[0].ToString()
+                        </td>
+                        <td>
+                            @(item[1].ToString())
+                        </td>
+                        <td>
+                            @(item[2].ToString())
+                        </td>
+                        <td>
+                            @(item[3].ToString())
+                        </td>
+                    </tr>
+                }
+        </table>
+    </div>
